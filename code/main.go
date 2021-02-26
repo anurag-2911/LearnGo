@@ -9,6 +9,7 @@ import (
 
 func main() {
 	printHelloWorld()
+	fmt.Scanln() // wait for user input
 }
 
 func printHelloWorld() {
