@@ -1,70 +1,9 @@
 Setup
+
 1. Install go from https://golang.org/dl/
 2. Install visual studio code
 3. In visual studio code > View>Extensions>Install Go Extension 
 4. Open any file in visual studio change to language Go and then install Go related analysis tools.
 
-Creating an application
 
-1. Create a file main.go
-2. Write some basic code
-package main
 
-import "fmt"
-
-func main() {
-	fmt.Println("hello world!")
-}
-
-3. Go run main.go : to run the code. 
-
-4.
-Usage:
-
-        go <command> [arguments]
-
-The commands are:
-
-        bug         start a bug report
-        build       compile packages and dependencies
-        clean       remove object files and cached files
-        doc         show documentation for package or symbol
-        env         print Go environment information
-        fix         update packages to use new APIs
-        fmt         gofmt (reformat) package sources
-        generate    generate Go files by processing source
-        get         add dependencies to current module and install them
-        install     compile and install packages and dependencies
-        list        list packages or modules
-        mod         module maintenance
-        run         compile and run Go program
-        test        test packages
-        tool        run specified go tool
-        version     print Go version
-        vet         report likely mistakes in packages
-
-Use "go help <command>" for more information about a command.
-
-Additional help topics:
-
-        buildconstraint build constraints
-        buildmode       build modes
-        c               calling between Go and C
-        cache           build and test caching
-        environment     environment variables
-        filetype        file types
-        go.mod          the go.mod file
-        gopath          GOPATH environment variable
-        gopath-get      legacy GOPATH go get
-        goproxy         module proxy protocol
-        importpath      import path syntax
-        modules         modules, module versions, and more
-        module-get      module-aware go get
-        module-auth     module authentication using go.sum
-        packages        package lists and patterns
-        private         configuration for downloading non-public code
-        testflag        testing flags
-        testfunc        testing functions
-        vcs             controlling version control with GOVCS
-
-5.
