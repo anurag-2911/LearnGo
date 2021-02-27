@@ -13,7 +13,7 @@ import (
 // fmt package has string formatting functions
 
 func main() { // main function is the entry point of the application
-	PrintHelloWorld() // simple hello world
+	printHelloWorld() // simple hello world
 	Variables()       // all about variables
 	Types()           // about types
 	fmt.Scanln()      // wait for user input

@@ -5,6 +5,6 @@ import(
 )
 
 // PrintHelloWorld functions prints hello world to the console
-func PrintHelloWorld() {
+func printHelloWorld() {
 	fmt.Printf("%s\n", "hello world")
 }
