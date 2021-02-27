@@ -12,4 +12,4 @@ c/c++ have high compile time.
 * Fast compile time
 * Garbage collected
 * built in concurrency
-* compile to one stanalone binary.
+* compile to one standalone binary.
