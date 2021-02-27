@@ -34,7 +34,7 @@ func Variables() {
 // block level variables
 func blockLevelVariables() {
 
-	fmt.Printf("%s","block level variables declaration and assignment")
+	fmt.Printf("%s", "block level variables declaration and assignment")
 
 	var i int = 99 // variable i of type int
 
@@ -45,40 +45,40 @@ func blockLevelVariables() {
 
 	var level int = 200 // shadowing of variable declared at package level
 
-	var Somevar int =10
+	var Somevar int = 10
 
 	fmt.Printf("%v %T\n", i, i)
 	fmt.Printf("%v %T\n", j, j)
 	fmt.Printf("%v %T\n", k, k)
 	fmt.Printf("%v %T\n", b, b)
 	fmt.Printf("%v %T\n", level, level)
-	fmt.Printf("%v\n",Somevar)
+	fmt.Printf("%v\n", Somevar)
 
 }
 
-func variablesConversion()  {
-	
-	fmt.Printf("variables conversion\n");
+func variablesConversion() {
 
-	var i int =101
+	fmt.Printf("variables conversion\n")
 
-	fmt.Printf("%v, %T\n",i,i)
+	var i int = 101
+
+	fmt.Printf("%v, %T\n", i, i)
 
 	var j float32
-	j=float32(i)
-    
-	fmt.Printf("%v, %T\n",j,j);
+	j = float32(i)
+
+	fmt.Printf("%v, %T\n", j, j)
 
 	//string conversion
 
-	var a int =5
+	var a int = 5
 
 	var str string = string(a)
 
-	fmt.Printf("%v , %T\n",str,str) // this will just print the unicode character of 5
+	fmt.Printf("%v , %T\n", str, str) // this will just print the unicode character of 5
 
-	str=strconv.Itoa(a)
+	str = strconv.Itoa(a)
 
-	fmt.Printf("%v , %T\n",str,str) // this is actual string conversion
+	fmt.Printf("%v , %T\n", str, str) // this is actual string conversion
 
 }

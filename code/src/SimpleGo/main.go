@@ -14,6 +14,7 @@ import (
 
 func main() { // main function is the entry point of the application
 	PrintHelloWorld() // simple hello world
-	Variables() // all about variables
-	fmt.Scanln() // wait for user input
+	Variables()       // all about variables
+	Types()           // about types
+	fmt.Scanln()      // wait for user input
 }

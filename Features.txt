@@ -13,3 +13,8 @@ c/c++ have high compile time.
 * Garbage collected
 * built in concurrency
 * compile to one standalone binary.
+
+Topics:
+* Variables
+* Primitive Types
+*
