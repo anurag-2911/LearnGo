@@ -1,35 +1,24 @@
 package main
 
-import "fmt"
+import 
+(
+	"fmt"
+	"strconv"
+)
 
 func main() {
-	var card string = "first card" // variable declaration
-	fmt.Println(card);
-
-	name:="anurag" // variable declaration
-	fmt.Println(name);
-
-	var nm string = getName();
-	fmt.Println(nm);
-
+	fmt.Print(" hello world ")
+	var card string = " variable declaration "
+	fmt.Print(card)
+	var1 := " another name "
+	var1 = " yes "
+	fmt.Print(var1)
+	fmt.Print(names() + " " + strconv.Itoa(age()))
 	
-	// array | slice
-
-	cards:= deck{"card1","card2","card3"}
-
-	// fmt.Println(cards)
-
-	cards = append(cards, "card3")
-
-	// fmt.Println(cards)
-    // for loop
-	// for i, v := range cards {
-	// 	fmt.Println(i,v);
-	// }
-
-	cards.print()
 }
-
-func getName() string {
-	return "anurag";
+func names() string {
+	return " anurag ";
+}
+func age() int {
+	return 1;
 }
