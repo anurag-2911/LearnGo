@@ -29,6 +29,6 @@ func callBasics() {
 
 	content:=cd.readFromFile(filename)
 	fmt.Println("file read content ")
-	fmt.Println(content)
+	content.printDeck()
 
 }

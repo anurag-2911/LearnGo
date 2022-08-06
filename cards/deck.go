@@ -68,13 +68,20 @@ func (d deck)writeToFile(fileName string) error {
 	return err
 }
 
-func (d deck)readFromFile(filename string) string{
+func (d deck)readFromFile(filename string) deck{
     var content string
+	var result deck
 	data ,err:=os.ReadFile(filename)
+	
 	if(err != nil){
 		fmt.Println(err)
+		os.Exit(1)
 	}
+
 	content = string(data)
-	return content
+	dataslice :=strings.Split(content, ",")
+	result = dataslice;
+
+	return result
 
 }
