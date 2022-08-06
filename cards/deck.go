@@ -1,20 +1,32 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"io/fs"
+	"os"
+	"strings"
+)
 
 // create a new type of desk which has slice of strings
 
 type deck []string
-
+var currentCards deck
 //receiver function
 func (cards deck) printDeck() {
-	for _, card := range cards {
-		fmt.Println(card)
+	for i, card := range cards {
+		fmt.Println(i,card)
 
 	}
 
 }
 
+func subDeck(max int) deck {
+ return currentCards[0:max]
+}
+
+func deal (d deck,max int) (deck,deck) {
+	return d[0:max],d[max:]
+}
 // creates new deck
 
 func newDeck() deck {
@@ -31,5 +43,38 @@ func newDeck() deck {
 			cards = append(cards, suit+" and "+cardvalue)
 		}
 	}
+	currentCards = cards
 	return cards
+}
+
+func (d deck)toString() string{
+
+	var strSlice []string = []string(d)
+
+	var finalString string = strings.Join(strSlice,",");
+	
+	return finalString
+	
+}
+
+func (d deck)writeToFile(fileName string) error {	
+	var content string = d.toString()
+	var data [] byte = []byte(content)
+	err := os.WriteFile(fileName, data, fs.ModeAppend)
+
+    if err != nil {
+        fmt.Println(err)
+    }
+	return err
+}
+
+func (d deck)readFromFile(filename string) string{
+    var content string
+	data ,err:=os.ReadFile(filename)
+	if(err != nil){
+		fmt.Println(err)
+	}
+	content = string(data)
+	return content
+
 }
