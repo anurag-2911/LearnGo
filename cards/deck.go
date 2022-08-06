@@ -5,6 +5,7 @@ import (
 	"io/fs"
 	"os"
 	"strings"
+	"math/rand"
 )
 
 // create a new type of desk which has slice of strings
@@ -85,3 +86,11 @@ func (d deck)readFromFile(filename string) deck{
 	return result
 
 }
+
+func (d deck) shuffle()  {
+
+for i  := range d {
+	newPosition:= rand.Intn(len(d)-1)
+	d[i], d[newPosition] = d[newPosition],d[i]
+
+}}
