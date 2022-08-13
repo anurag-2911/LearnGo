@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"time"
 )
 
 func main() {
@@ -14,23 +15,28 @@ func main() {
 		"http://amazon.com",
 	}
 
-	channel:=make(chan string)
+	channel := make(chan string)
 
 	for _, link := range links {
-		go checkLink(link,channel)
+		go checkLink(link, channel)
 	}
-	var receive string = <-channel
-	fmt.Println(receive)
-	fmt.Println(" all done! ")
+	for {
+		var receive string = <-channel
+		go checkLink(receive,channel)
+	}
+	
 }
-func checkLink(link string,chn chan string) {
-	fmt.Println(" check link function is called ")
+func checkLink(link string, chn chan string) {
+	// fmt.Println(" check link function is called ")
+	time.Sleep(time.Minute)
 	_, err := http.Get(link)
 	if err != nil {
-		fmt.Println(link, "is down")
-		chn <- link + " might be down "
+		msg := link + " is down "
+		fmt.Println(msg)
+		chn <- msg
 	} else {
-		fmt.Println(link, " is up ")
-		chn <-link + " is working "
+		msg := link + " is up "
+		fmt.Println(msg)
+		chn <- msg
 	}
 }
